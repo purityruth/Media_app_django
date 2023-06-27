@@ -1,0 +1,29 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<div class="card card-body">
+    <a class="btn btn-info btn-sm btn-block" href="{% url 'create_media' %}">Create Media</a>
+    <table class="table table-sm">
+        <tr>
+            <th>File Name</th>
+            <th>File Type</th>
+            <th>File URL</th>
+            <th>Update</th>
+            <th>Remove</th>
+        </tr>
+
+        {% for item in media %}
+        <tr>
+            <td>{{item.file_name}}</td>
+            <td>{{item.file_type}}</td>
+            <td>{{item.file_url}}</td>
+            <td><a class="btn btn-sm btn-info" href="{% url 'update_media' item.id %}">Update</a></td>
+            <td><a class="btn btn-sm btn-danger" href="{% url 'delete_media' item.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}

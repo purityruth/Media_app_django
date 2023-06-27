@@ -1,0 +1,31 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Tunyce</title>       
+        <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+        {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+
+        <style>
+            
+        </style>
+    </head>
+    <body class="container">
+        
+        {% include 'accounts/navbar.html' %}
+
+        {% block content %}
+
+        <div>
+            <br><br><br>
+            <p style="font-size: 20"> </p>
+        </div>
+        
+        {% endblock %}
+
+        <hr>
+        {% include 'accounts/footer.html' %}
+    </body>
+</html>
